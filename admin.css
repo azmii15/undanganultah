@@ -1,0 +1,311 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #101010;
+    color: #f5ebd5;
+}
+
+.header {
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #080808;
+    border-bottom: 1px solid #9e8146;
+}
+
+.header h2 {
+    color: #d6b66e;
+    letter-spacing: 3px;
+}
+
+.header a {
+    color: #d6b66e;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 20px;
+}
+
+.heading {
+    margin-bottom: 30px;
+}
+
+.heading p {
+    color: #d6b66e;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.heading h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.heading span {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    padding: 25px;
+    background: #1d1d1d;
+    border: 1px solid #51452c;
+    border-radius: 5px;
+}
+
+.stat-card span {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.stat-card h2 {
+    color: #d6b66e;
+    font-size: 30px;
+    margin-top: 12px;
+}
+
+.guest-section {
+    padding: 25px;
+    background: #1d1d1d;
+    border: 1px solid #51452c;
+    border-radius: 5px;
+}
+
+.guest-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.guest-heading h2 {
+    color: #d6b66e;
+}
+
+.guest-heading input {
+    padding: 12px;
+    background: #101010;
+    border: 1px solid #51452c;
+    color: white;
+    border-radius: 4px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #393327;
+    font-size: 13px;
+}
+
+th {
+    color: #d6b66e;
+}
+
+td {
+    color: #ddd;
+}
+
+.status {
+    color: #d6b66e;
+    font-weight: bold;
+}
+
+.action-button {
+    display: inline-block;
+    padding: 9px 12px;
+    background: #c9a45c;
+    color: #111;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.action-button:disabled {
+    background: #555;
+    color: #ddd;
+    cursor: not-allowed;
+}
+
+#emptyMessage {
+    display: none;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 18px;
+    }
+
+    .container {
+        padding: 30px 15px;
+    }
+
+    .statistics {
+        grid-template-columns: 1fr;
+    }
+
+    .guest-heading {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .guest-heading input {
+        width: 100%;
+    }
+
+    .guest-section {
+        padding: 15px;
+    }
+}
+#importStatus {
+    color: #d6b66e;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+#csvFile {
+    display: block;
+    margin-top: 15px;
+    max-width: 100%;
+    color: #ddd;
+}
+
+.guest-section > p {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* TOMBOL WHATSAPP */
+.whatsapp-button {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.whatsapp-button:hover {
+    background: #1da851;
+}
+
+/* TOMBOL TANDAI HADIR */
+.action-button {
+    background: #b99b5b;
+    color: #111;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.action-button:disabled {
+    background: #777;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* TABEL RESPONSIVE */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    min-width: 850px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+/* TABEL DATA TAMU */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 1100px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* TOMBOL WHATSAPP */
+.whatsapp-button {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.whatsapp-button:hover {
+    background: #1da851;
+}
+
+/* TOMBOL KEHADIRAN */
+.action-button {
+    background: #b99b5b;
+    color: #111;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.action-button:disabled {
+    background: #777;
+    color: white;
+    cursor: not-allowed;
+}

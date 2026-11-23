@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Invitation - Syafiq</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- COVER UNDANGAN -->
+    <section class="hero" id="cover">
+        <div class="hero-content">
+            <p class="subtitle">YOU ARE INVITED TO</p>
+            <h1>Birthday Party</h1>
+            <h2>Syafiq's Birthday</h2>
+            <p class="date">15 November 2027</p>
+
+            <div class="guest">
+                Kepada Yth.
+                <h3 id="guestName">Tamu Undangan</h3>
+            </div>
+
+            <button type="button" id="openInvitation">
+                Buka Undangan
+            </button>
+        </div>
+    </section>
+
+    <!-- HALAMAN UTAMA -->
+    <main class="invitation-page" id="invitationPage">
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <a href="#home" class="nav-logo">SYAFIQ.</a>
+
+            <button
+                type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Buka navigasi"
+                aria-expanded="false"
+                aria-controls="navLinks">
+                ☰
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#home">HOME</a>
+                <a href="#event">EVENT</a>
+                <a href="#gallery">GALLERY</a>
+                <a href="#location">LOCATION</a>
+                <a href="#gift">GIFT</a>
+                <a href="#rsvp">RSVP</a>
+            </div>
+        </nav>
+
+        <!-- MUSIC PLAYER -->
+        <div class="music-player">
+            <audio id="backgroundMusic" loop>
+                <source src="./assets/Firasat.mp3" type="audio/mpeg">
+                Browser kamu tidak mendukung audio.
+            </audio>
+
+            <button type="button" id="musicButton" class="gold-button">
+                ▶ Play Music
+            </button>
+        </div>
+
+        <!-- HOME -->
+        <section class="welcome section" id="home">
+            <p class="subtitle">A SPECIAL DAY TO REMEMBER</p>
+            <h1>Welcome to My Birthday</h1>
+            <h2>Syafiq's Birthday Celebration</h2>
+
+            <p>
+                Dengan penuh kebahagiaan, saya mengundang
+                Anda untuk hadir dan merayakan hari spesial ini.
+            </p>
+        </section>
+
+        <!-- EVENT -->
+        <section class="event section" id="event">
+            <p class="subtitle">SAVE THE DATE</p>
+            <h2>Birthday Celebration</h2>
+
+            <div class="event-card">
+                <p><strong>Hari / Tanggal</strong></p>
+                <p>Senin, 15 November 2027</p>
+
+                <p><strong>Waktu</strong></p>
+                <p>15.00 WIB - Selesai</p>
+
+                <p><strong>Acara</strong></p>
+                <p>Birthday Party Syafiq</p>
+            </div>
+
+            <h3>Countdown</h3>
+
+            <div class="countdown">
+                <div><span id="days">00</span><small>Hari</small></div>
+                <div><span id="hours">00</span><small>Jam</small></div>
+                <div><span id="minutes">00</span><small>Menit</small></div>
+                <div><span id="seconds">00</span><small>Detik</small></div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="gallery section" id="gallery">
+            <p class="subtitle">OUR MOMENTS</p>
+            <h2>Birthday Gallery</h2>
+
+            <div class="gallery-grid">
+                <img src="./assets/foto1.jpg" alt="Foto kenangan 1">
+                <img src="./assets/foto2.jpg" alt="Foto kenangan 2">
+                <img src="./assets/foto3.jpg" alt="Foto kenangan 3">
+                <img src="./assets/foto4.jpg" alt="Foto kenangan 4">
+            </div>
+        </section>
+
+       <!-- LOCATION -->
+<section class="location section" id="location">
+    <p class="subtitle">FIND THE LOCATION</p>
+    <h2>Event Location</h2>
+
+    <div class="location-card">
+        <h3>Lokasi Acara</h3>
+        <p>Silakan sesuaikan alamat acara di sini.</p>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0031130667126!2d106.6635015760382!3d-6.263318761320718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb06a47e36b7%3A0x93b22c3ee1f216b1!2sSMKN%206%20Tangerang%20Selatan!5e0!3m2!1sid!2sid!4v1795405973613!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </div>
+</section>
+
+        <!-- BANK ACCOUNT -->
+<section class="gift section" id="gift">
+    <p class="subtitle">SEND A LITTLE GIFT</p>
+    <h2>Wedding? No, Birthday Gift</h2>
+
+    <div class="gift-card">
+        <p>
+            Doa dan kehadiran Anda adalah hadiah terbaik bagi saya.
+            Namun, jika ingin memberikan hadiah melalui rekening,
+            berikut informasi rekening saya.
+        </p>
+
+        <div class="bank-info">
+            <h3>Nama Bank</h3>
+            <p>BANK BCA</p>
+
+            <h3>Nomor Rekening</h3>
+            <p id="accountNumber">1234567890</p>
+
+            <h3>Atas Nama</h3>
+            <p>SYAFIQ SYADIDUL AZMI</p>
+        </div>
+
+        <button
+            type="button"
+            class="gold-button"
+            id="copyGift">
+            Copy Nomor Rekening
+        </button>
+    </div>
+</section>
+
+        <!-- RSVP -->
+        <section class="rsvp section" id="rsvp">
+            <p class="subtitle">LET US KNOW</p>
+            <h2>RSVP</h2>
+
+            <form id="rsvpForm">
+                <input
+                    type="text"
+                    id="rsvpName"
+                    placeholder="Nama lengkap"
+                    required>
+
+                <select id="attendance" required>
+                    <option value="">Konfirmasi kehadiran</option>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Tidak Hadir">Tidak Hadir</option>
+                </select>
+
+                <textarea
+                    id="message"
+                    placeholder="Tulis ucapan dan doa..."
+                    required></textarea>
+
+                <button type="submit" class="gold-button">
+                    Kirim RSVP ke WhatsApp
+                </button>
+            </form>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <h2>SYAFIQ</h2>
+            <p>Thank you for being part of my special day.</p>
+            <p>© 2027 Birthday Invitation</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

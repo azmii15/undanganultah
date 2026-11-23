@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin - Birthday Invitation</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h2>SYAFIQ.</h2>
+        <a href="index.html">Kembali ke Undangan</a>
+    </header>
+
+    <main class="container">
+
+        <!-- IMPORT DATA TAMU -->
+        <section class="guest-section">
+            <h2>Import Data Tamu</h2>
+            <p>
+                Pilih file CSV yang berisi nama, instansi,
+                kategori, dan nomor WhatsApp tamu.
+            </p>
+
+            <input
+                type="file"
+                id="csvFile"
+                accept=".csv,text/csv">
+
+            <p id="importStatus"></p>
+        </section>
+
+        <!-- HEADING -->
+        <section class="heading">
+            <p>ADMIN DASHBOARD</p>
+            <h1>Daftar Tamu</h1>
+            <span>Kelola undangan, konfirmasi, dan kehadiran tamu.</span>
+        </section>
+
+        <!-- STATISTIK -->
+        <section class="statistics">
+
+            <div class="stat-card">
+                <span>Total Tamu</span>
+                <h2 id="totalGuests">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Konfirmasi Hadir</span>
+                <h2 id="totalAttending">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Sudah Datang</span>
+                <h2 id="totalPresent">0</h2>
+            </div>
+
+        </section>
+
+        <!-- DAFTAR TAMU -->
+        <section class="guest-section">
+
+            <div class="guest-heading">
+                <h2>Data Tamu</h2>
+
+                <input
+                    type="text"
+                    id="searchGuest"
+                    placeholder="Cari nama tamu...">
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Instansi</th>
+                            <th>Kategori</th>
+                            <th>No. WhatsApp</th>
+                            <th>Kehadiran</th>
+                            <th>Ucapan</th>
+                            <th>Status</th>
+                            <th>Kirim Undangan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="guestTable"></tbody>
+                </table>
+
+            </div>
+
+            <p id="emptyMessage">Belum ada data tamu.</p>
+
+        </section>
+
+    </main>
+
+    <!-- PAPAPARSE HARUS SEBELUM ADMIN.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+</html>

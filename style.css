@@ -1,0 +1,665 @@
+
+/* =========================
+   1. RESET & GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #006363;
+    color: #f5ebd5;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section[id] {
+    scroll-margin-top: 85px;
+}
+
+/* =========================
+   2. HERO COVER
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background:
+        linear-gradient(rgba(1, 119, 128, 0.75), rgba(0,0,0,0.85)),
+        radial-gradient(circle, #00415a, #131212 70%);
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 700px;
+    padding: 35px 20px;
+    border: 1px solid #005f5a;
+    outline: 1px solid rgba(185,154,85,0.25);
+    outline-offset: 8px;
+}
+
+.subtitle {
+    color: #d6b66e;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    color: #046677;
+    font-size: clamp(38px, 7vw, 65px);
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: clamp(19px, 4vw, 28px);
+    font-weight: 400;
+}
+
+.date {
+    margin: 25px 0;
+    color: #d6b66e;
+    letter-spacing: 2px;
+}
+
+.guest {
+    margin: 30px 0;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.guest h3 {
+    color: #d6b66e;
+    font-size: 22px;
+    margin-top: 8px;
+}
+
+#openInvitation {
+    background: #c9a45c;
+    color: #004136;
+    border: none;
+    padding: 14px 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#openInvitation:hover {
+    background: #f0d18a;
+    transform: translateY(-3px);
+}
+
+.hero.closed {
+    display: none;
+}
+
+/* =========================
+   3. HALAMAN UNDANGAN
+========================= */
+
+.invitation-page {
+    display: none;
+    background: #007763;
+    color: #f5ebd5;
+    min-height: 100vh;
+}
+
+.invitation-page.show {
+    display: block;
+    animation: pageReveal 0.8s ease;
+}
+
+@keyframes pageReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   4. NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(12,12,12,0.97);
+    border-bottom: 1px solid rgba(201,164,92,0.3);
+}
+
+.nav-logo {
+    color: #008db1;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #eee;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #045f8a;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid #c9a45c;
+    color: #d6b66e;
+    font-size: 23px;
+    padding: 5px 12px;
+}
+
+/* =========================
+   5. SECTION UMUM
+========================= */
+
+.section {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: clamp(28px, 5vw, 42px);
+    color: #d6b66e;
+    margin-bottom: 30px;
+}
+
+.section p {
+    line-height: 1.8;
+}
+
+/* =========================
+   6. HOME
+========================= */
+
+.welcome {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #171717, #242017);
+}
+
+.welcome h1 {
+    font-size: clamp(32px, 6vw, 55px);
+    color: #d6b66e;
+    margin-bottom: 15px;
+}
+
+.welcome h2 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.welcome p:last-child {
+    max-width: 600px;
+    color: #ccc;
+}
+
+/* =========================
+   7. EVENT
+========================= */
+
+.event {
+    background: #171717;
+}
+
+.event-card {
+    max-width: 550px;
+    margin: 0 auto 45px;
+    padding: 35px 20px;
+    border: 1px solid #9e8146;
+    background: #202020;
+}
+
+.event-card p {
+    margin-bottom: 12px;
+    color: #ccc;
+}
+
+.event-card strong {
+    color: #d6b66e;
+}
+
+.event h3 {
+    color: #d6b66e;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.countdown div {
+    width: 100px;
+    padding: 20px 10px;
+    border: 1px solid #047055;
+    background: #202020;
+}
+
+.countdown span {
+    display: block;
+    font-size: 30px;
+    color: #d6b66e;
+    font-weight: 600;
+}
+
+.countdown small {
+    color: #ccc;
+}
+
+/* =========================
+   8. GALLERY
+========================= */
+
+.gallery {
+    background: #101010;
+}
+
+.gallery-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #9e8146;
+    transition: 0.4s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* =========================
+   9. LOCATION
+========================= */
+
+.location {
+    background: #171717;
+}
+
+.location-card {
+    max-width: 550px;
+    margin: auto;
+    padding: 35px 20px;
+    background: #202020;
+    border: 1px solid #026161;
+}
+
+.location-card h3 {
+    color: #005a44;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.location-card p {
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   10. GIFT
+========================= */
+
+.gift {
+    background: #005045;
+}
+
+.gift-card {
+    max-width: 550px;
+    margin: auto;
+    padding: 35px 20px;
+    border: 1px solid #9e8146;
+    background: #202020;
+}
+
+.gift-card p {
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.gold-button {
+    display: inline-block;
+    background: #c9a45c;
+    color: #111;
+    border: none;
+    padding: 13px 25px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.gold-button:hover {
+    background: #f0d18a;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   11. RSVP
+========================= */
+
+.rsvp {
+    background: #171717;
+}
+
+#rsvpForm {
+    max-width: 550px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#rsvpForm input,
+#rsvpForm select,
+#rsvpForm textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #009669;
+    background: #202020;
+    color: #f5ebd5;
+    outline: none;
+}
+
+#rsvpForm textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#rsvpForm input::placeholder,
+#rsvpForm textarea::placeholder {
+    color: #aaa;
+}
+
+.rsvp h3 {
+    color: #d6b66e;
+    margin: 40px 0 20px;
+}
+
+#guestList {
+    max-width: 550px;
+    margin: auto;
+    text-align: left;
+}
+
+.guest-item {
+    padding: 15px;
+    margin-bottom: 12px;
+    background: #202020;
+    border-left: 3px solid #c9a45c;
+}
+
+/* =========================
+   12. FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #080808;
+    border-top: 1px solid rgba(201,164,92,0.3);
+}
+
+.footer h2 {
+    color: #d6b66e;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   13. RESPONSIVE TABLET & HP
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #111;
+        border-bottom: 1px solid #c9a45c;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 16px 25px;
+        border-top: 1px solid rgba(201,164,92,0.15);
+        font-size: 13px;
+    }
+
+    .section {
+        padding: 75px 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .gallery-grid img {
+        height: 190px;
+    }
+
+    .countdown {
+        gap: 8px;
+    }
+
+    .countdown div {
+        width: 75px;
+        padding: 15px 5px;
+    }
+
+    .countdown span {
+        font-size: 24px;
+    }
+}
+
+/* =========================
+   14. HP KECIL
+========================= */
+
+@media (max-width: 400px) {
+
+    .hero-content {
+        padding: 30px 12px;
+    }
+
+    .subtitle {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: 230px;
+    }
+
+    .countdown div {
+        width: 68px;
+    }
+
+    .countdown span {
+        font-size: 21px;
+    }
+}
+
+/* HALAMAN UTAMA */
+.invitation-page {
+    display: none;
+    min-height: 100vh;
+    background: #101010;
+    color: #f5ebd5;
+}
+
+.invitation-page.show {
+    display: block;
+}
+
+.hero.closed {
+    display: none;
+}
+
+/* MUSIC PLAYER */
+.music-player {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* GOOGLE MAPS */
+.map-container {
+    width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 350px;
+    border: 0;
+}
+
+.map-link {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+/* FORM RSVP */
+#rsvpForm {
+    width: 100%;
+    max-width: 500px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#rsvpForm input,
+#rsvpForm select,
+#rsvpForm textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #b99b5b;
+    border-radius: 8px;
+    background: #181818;
+    color: #f5ebd5;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+#rsvpForm textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#rsvpForm button {
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .map-container iframe {
+        height: 280px;
+    }
+
+    .music-player {
+        padding: 15px;
+    }
+
+    #rsvpForm {
+        padding: 0 15px;
+    }
+}
+
